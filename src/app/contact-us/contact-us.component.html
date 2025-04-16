@@ -1,0 +1,58 @@
+<!-- contact-us.component.html -->
+<div class="container">
+  <h1 class="title">Contact <span>Us!</span></h1>
+
+  <div class="form-wrapper">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" placeholder="Company Name" formControlName="companyName">
+          <div *ngIf="submitted && contactForm.get('companyName')?.errors" class="error-message">
+            Company name is required
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email Address" formControlName="email">
+          <div *ngIf="submitted && contactForm.get('email')?.errors" class="error-message">
+            Valid email is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <input type="tel" placeholder="Mobile Number" formControlName="mobileNumber">
+        </div>
+        <div class="form-group">
+          <select formControlName="sponsorshipType">
+            <option value="" disabled selected>Sponsorship Type</option>
+            <option *ngFor="let type of sponsorshipTypes" [value]="type.value">{{type.label}}</option>
+          </select>
+          <div *ngIf="submitted && contactForm.get('sponsorshipType')?.errors" class="error-message">
+            Please select a sponsorship type
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <textarea placeholder="Your Message" formControlName="message"></textarea>
+        <div *ngIf="submitted && contactForm.get('message')?.errors" class="error-message">
+          Message is required
+        </div>
+      </div>
+
+      <!-- Honeypot field for spam protection -->
+      <input type="checkbox" formControlName="botcheck" class="hidden" style="display: none;">
+
+      <button type="submit" class="submit-btn">Send Message</button>
+
+      <div *ngIf="success" style="text-align: center; margin-top: 20px; color: white;">
+        <strong>Thank you! Your message has been sent successfully.</strong>
+      </div>
+
+      <div *ngIf="error" class="error-message">
+        Something went wrong. Please try again later.
+      </div>
+    </form>
+  </div>
+</div>

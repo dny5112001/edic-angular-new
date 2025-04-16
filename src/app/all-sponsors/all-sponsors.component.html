@@ -1,0 +1,34 @@
+<section class="projects" id="projects">
+    <h2 class="heading">All <span>Sponsors</span></h2>
+  
+    @if (loading) {
+    <div class="loading">Loading sponsors...</div>
+    } @if (error) {
+    <div class="error">{{ error }}</div>
+    } @if (!loading && !error) {
+    <div class="portfolio-container">
+      @for (sponsor of sponsors; track sponsor.id; let i = $index) {
+      <div class="portfolio-box">
+        <img [src]="sponsor.logoUrl" [alt]="sponsor.name" />
+        <div class="portfolio-layer">
+          <h4>{{ sponsor.name }}</h4>
+          <p>{{ sponsor.description }}</p>
+          <a [routerLink]="['/sponsor-details', sponsor.id]">
+            <i class="bx bx-link-external"></i>
+          </a>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="explore-more-container">
+      <a
+        routerLink="/"
+        class="explore-more-btn"
+        rel="noopener"
+      >
+        Back <i class="bx bx-right-arrow-alt"></i>
+      </a>
+    </div>
+    }
+  </section>
+  

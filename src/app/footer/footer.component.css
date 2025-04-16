@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:host {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.footer {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  color: #d1d5db;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 14px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.footer .container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.footer p {
+  margin: 6px 0;
+}
+
+.footer a {
+  color: #00C2FF;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #00A4D6;
+  text-decoration: underline;
+}

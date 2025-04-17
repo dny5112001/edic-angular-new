@@ -1,0 +1,263 @@
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(135deg, #000316 0%, #141830 100%);
+  padding: 20px 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(81, 94, 157, 0.18);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Logo Placeholder */
+.header-logo {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(90deg, #5d6dfa, #7a85fa);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+  transform: rotate(360deg);
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #5d6dfa, #7a85fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.header-title:hover {
+  transform: scale(1.05);
+}
+
+.header-nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #b4bddc;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background: linear-gradient(90deg, #5d6dfa, #7a85fa);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+/* User Profile Styles */
+.user-profile {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(20, 24, 48,-updates 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.user-profile:hover {
+  transform: scale(1.1);
+}
+
+.user-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Dropdown Styles */
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(20, 24, 48, 0.9);
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  z-index: 1200;
+}
+
+.user-profile:hover .profile-dropdown {
+  display: block;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #ff7e87;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logout-btn:hover {
+  color: #ff999f;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: #7a85fa;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: wrap;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .header-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    background: rgba(20, 24, 48, 0.9);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .header-nav.active {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 18px;
+  }
+
+  .header-title {
+    font-size: 24px;
+  }
+
+  .user-profile {
+    width: 35px;
+    height: 35px;
+  }
+
+  .user-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .profile-dropdown {
+    position: static; /* Adjust for mobile menu */
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .header-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .header-title {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+}

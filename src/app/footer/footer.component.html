@@ -1,0 +1,74 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-container">
+      <!-- Logo and Description -->
+      <div class="footer-section">
+        <h1 class="footer-title">EDIC</h1>
+        <p class="footer-description">
+          Empowering college students to innovate, create, and lead in the world
+          of entrepreneurship.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-section">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/about" class="footer-link">About Us</a></li>
+          <li><a href="/events" class="footer-link">Events</a></li>
+          <li><a href="/join" class="footer-link">Join Us</a></li>
+          <li><a href="/contact" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Subscription and Social -->
+      <div class="footer-section">
+        <h3 class="footer-heading">Stay Connected</h3>
+        <p class="footer-description">
+          Subscribe for updates on events and opportunities!
+        </p>
+        <div class="subscribe-form">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="subscribe-input"
+            [(ngModel)]="email"
+          />
+          <button class="subscribe-button" (click)="subscribe()">
+            Subscribe
+          </button>
+        </div>
+        <div class="social-links">
+          <a
+            href="https://twitter.com/edic_club"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://instagram.com/edic_club"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://linkedin.com/company/edic-club"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 EDIC Club. All Rights Reserved.</p>
+      <p>
+        Contact:
+        <a href="mailto:info@edic.club" class="contact-link">infoedic.club</a>
+      </p>
+    </div>
+  </div>
+</footer>

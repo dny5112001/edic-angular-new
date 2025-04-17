@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Winky Rough", sans-serif;
+}
+:host {
+  display: block;
+}
+
+.hero-container {
+  color: #fff;
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 100px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: linear-gradient(180deg, rgba(0, 4, 29, 0.95), rgba(0, 4, 29, 1)); */
+  overflow: hidden;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 5%;
+  gap: 50px;
+}
+
+.hero-text {
+  flex: 1;
+  z-index: 2;
+  animation: fadeInLeft 1s ease-out;
+}
+
+.company-name {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #A9B2D1; /* Softer slate for branding */
+  margin-bottom: 15px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.hero-text h1 {
+  font-size: 4.2rem; /* Slightly smaller for elegance */
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.15;
+  color: #F0F0F5; /* Softer white for sophistication */
+  letter-spacing: 2px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #D8D8E0; /* Slightly brighter gray */
+  max-width: 520px;
+  margin-bottom: 35px;
+  opacity: 0.92;
+}
+
+.cta-button {
+  background: linear-gradient(45deg, #FF4F79, #FF2A5F);
+  color: #fff;
+  border: none;
+  padding: 15px 35px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 79, 121, 0.5);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 79, 121, 0.7);
+  background: linear-gradient(45deg, #FF2A5F, #FF4F79); /* Reverse gradient for effect */
+}
+
+.hero-illustration {
+  flex: 1;
+  position: relative;
+  height: 460px;
+  animation: fadeInRight 1.2s ease-out;
+}
+
+.image-cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.main-card {
+  position: absolute;
+  width: 78%;
+  height: 88%;
+  background-image: url('https://images.unsplash.com/photo-1573164713988-8665fc963095'); /* Your original Unsplash URL */
+  background-size: cover;
+  background-position: center;
+  border-radius: 22px;
+  right: 0;
+  top: 12%;
+  opacity: 0.9;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.main-card:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+.inner-card {
+  position: absolute;
+  width: 68%;
+  height: 68%;
+  overflow: hidden;
+  border-radius: 22px;
+  left: 8%;
+  top: 22%;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+  transition: transform 0.4s ease;
+}
+
+.inner-card:hover {
+  transform: scale(1.04);
+}
+
+.sunset-image {
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/hero1.jpg'); /* Your original image restored */
+  background-size: cover;
+  background-position: center;
+  border-radius: 22px;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 3.6rem;
+  }
+
+  .hero-text p {
+    font-size: 1.15rem;
+    max-width: 480px;
+  }
+
+  .hero-illustration {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 7%;
+    gap: 30px;
+  }
+
+  .hero-text {
+    margin-bottom: 40px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.8rem;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+  .hero-illustration {
+    height: 320px;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .main-card {
+    width: 88%;
+  }
+
+  .inner-card {
+    width: 72%;
+    left: 12%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .hero-illustration {
+    height: 260px;
+  }
+
+  .cta-button {
+    padding: 10px 25px;
+  }
+}

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="back-arrow">
+    <a href="#" class="arrow-btn">←</a>
+  </div>
+
+  <div class="image-container">
+    <img [src]="sponsorData.logoUrl" alt="{{sponsorData.name}} Logo" *ngIf="sponsorData.logoUrl" />
+    <div *ngIf="!sponsorData.logoUrl" class="placeholder">No Logo Available</div>
+  </div>
+
+  <div class="text-container">
+    <h1 class="sponsor-name">Company Name: <span>{{sponsorData.name || 'N/A'}}</span></h1>
+
+    <div class="info-section">
+      <p><strong>About:</strong> {{sponsorData.description || 'No description available.'}}</p>
+      <p><strong>Sponsorship Type:</strong> {{sponsorData.level || 'N/A'}}</p>
+      <p><strong>Sponsored Event:</strong> {{sponsorData.sponsoredEvent || 'N/A'}}</p>
+      <p><strong>Contact Info:</strong> 
+        Email: <a [href]="'mailto:' + sponsorData.contactEmail">{{sponsorData.contactEmail || 'N/A'}}</a> | 
+        Phone: {{sponsorData.contactPhone || 'N/A'}} | 
+        Contact: {{sponsorData.contactName || 'N/A'}}
+      </p>
+      <p *ngIf="sponsorData.contributionAmount"><strong>Contribution:</strong> ${{sponsorData.contributionAmount | number}}</p>
+      <p *ngIf="sponsorData.featured"><strong>Featured:</strong> Yes</p>
+    </div>
+
+    <a [href]="sponsorData.websiteUrl" class="website-btn" target="_blank" *ngIf="sponsorData.websiteUrl">Visit Website</a>
+  </div>
+</div>

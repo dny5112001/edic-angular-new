@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<ng-container *ngIf="isHomePage">
+  <app-hero-section></app-hero-section>
+  <app-about-us></app-about-us>
+  <app-sponsors-cards></app-sponsors-cards>
+  <app-contact-us></app-contact-us>
+</ng-container>
+
+<router-outlet *ngIf="!isHomePage"></router-outlet>
+
+<app-footer></app-footer>
